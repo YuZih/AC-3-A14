@@ -1,0 +1,20 @@
+%black-background-white-text {
+  background-color: $second-black;
+  color: $white;
+}
+
+%black-line {
+  /* turn connect line into black */
+  + div {
+    background-color: $first-black;
+  }
+}
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num * 2 {
+    $j: ($i + 1) / 2;
+    &:nth-child(#{$i}) .sec__stepper__wrapper__step__circle::after {
+      content: "#{$j}";
+    }
+  }
+}
