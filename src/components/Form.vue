@@ -3,7 +3,7 @@
   <section class="sec__form mx-4">
     <form action="#" class="sec__form__wrapper">
       <!-- form part1 -->
-      <div v-if="step === 1" class="sec__form__wrapper__part">
+      <div v-show="step === 1" class="sec__form__wrapper__part">
         <div class="sec__form__wrapper__part__title mt-6 big-title">
           寄送地址
         </div>
@@ -77,7 +77,10 @@
       </div>
 
       <!-- form part2 -->
-      <div v-if="step === 2" class="sec__form__wrapper__part deliv-method-part">
+      <div
+        v-show="step === 2"
+        class="sec__form__wrapper__part deliv-method-part"
+      >
         <div class="sec__form__wrapper__part__title mt-6 big-title">
           運送方式
         </div>
@@ -121,7 +124,7 @@
       </div>
 
       <!-- form part3 -->
-      <div v-if="step === 3" class="sec__form__wrapper__part">
+      <div v-show="step === 3" class="sec__form__wrapper__part">
         <div class="sec__form__wrapper__part__title mt-6 big-title">
           付款資訊
         </div>

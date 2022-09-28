@@ -95,9 +95,11 @@ export default {
   },
   methods: {
     product1_minus() {
-      this.product1_quantity -= 1;
-      this.product1_total = this.product1_quantity * 3999;
-      this.changeSubtotal();
+      if (this.product1_quantity > 0) {
+        this.product1_quantity -= 1;
+        this.product1_total = this.product1_quantity * 3999;
+        this.changeSubtotal();
+      }
     },
     product1_plus() {
       this.product1_quantity += 1;
@@ -105,13 +107,15 @@ export default {
       this.changeSubtotal();
     },
     product2_minus() {
-      this.product2_quantity -= 1;
-      this.product2_total = this.product2_quantity * 1299;
-      this.changeSubtotal();
+      if (this.product2_quantity > 0) {
+        this.product2_quantity -= 1;
+        this.product2_total = this.product2_quantity * 1299;
+        this.changeSubtotal();
+      }
     },
     product2_plus() {
       this.product2_quantity += 1;
-      this.product2_total = this.product1_quantity * 3999;
+      this.product2_total = this.product2_quantity * 1299;
       this.changeSubtotal();
     },
     changeSubtotal() {
